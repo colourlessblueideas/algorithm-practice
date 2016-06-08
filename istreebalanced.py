@@ -2,18 +2,18 @@
 Given a binary tree, determine if it is height-balanced.
 """
 
-def height(self, root):
+def height(root):
         if not root:
             return 0
         else:
-            return 1 + max(self.height(root.left), self.height(root.right))
+            return 1 + max(height(root.left), height(root.right))
 
-def isBalanced(self, root):
+def isBalanced(root):
         if not root:
             return True
-        elif abs(self.height(root.left) - self.height(root.right)) > 1:
+        elif abs(height(root.left) - height(root.right)) > 1:
             return False
         else:
-            return self.isBalanced(root.left) and self.isBalanced(root.right)
+            return isBalanced(root.left) and isBalanced(root.right)
     
     
